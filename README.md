@@ -1,2 +1,2 @@
 # webdeb-init-tree
-Script to create simple folder structure for web development
+Script to create a simple initial tree folders for the web development

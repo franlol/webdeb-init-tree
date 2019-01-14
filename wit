@@ -1,0 +1,23 @@
+#!/bin/bash
+NAME=$1
+if [ -d "./$NAME" ]
+then
+    echo -e "WIT: Folder\033[1m $NAME \033[0malready exists ;("
+else
+    mkdir $NAME
+    mkdir $NAME/styles && touch $NAME/styles/style.css
+    mkdir $NAME/scripts && touch $NAME/scripts/script.js
+    echo "WIT: Initial folders to start a web development have been created" 
+    echo "<!DOCTYPE html>
+    <html lang=en>
+    <head>
+        <meta charset=UTF-8>
+        <link rel=stylesheet href=./styles/style.css>
+        <title>My WIT Project</title>
+    </head>
+    <body>
+    
+        <script src=./scripts/script.js></script>
+    </body>
+    </html>" > $NAME/index.html
+fi
