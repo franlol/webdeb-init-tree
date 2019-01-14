@@ -4,7 +4,7 @@ Script to create a simple initial tree folders for the web development<br>
 Installation:<br>
 git clone https://github.com/franlol/webdeb-init-tree<br>
 cd ./webdeb-init-tree<br>
-cp wit /bin/wit<br>
+sudo cp wit /bin/wit<br>
 <br>
 Usage:<br>
 wit folder-name<br>
