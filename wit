@@ -9,15 +9,15 @@ else
     mkdir $NAME/scripts && touch $NAME/scripts/script.js
     echo "WIT: Initial folders to start a web development have been created" 
     echo "<!DOCTYPE html>
-    <html lang=en>
+    <html lang='en'>
     <head>
-        <meta charset=UTF-8>
-        <link rel=stylesheet href=./styles/style.css>
+        <meta charset='UTF-8'>
+        <link rel='stylesheet' href='./styles/style.css'>
         <title>My WIT Project</title>
     </head>
     <body>
     
-        <script src=./scripts/script.js></script>
+        <script src='./scripts/script.js'></script>
     </body>
     </html>" > $NAME/index.html
 fi
