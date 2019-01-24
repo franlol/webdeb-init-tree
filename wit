@@ -1,23 +1,104 @@
 #!/bin/bash
+clear
 NAME=$1
+
 if [ -d "./$NAME" ]
 then
     echo -e "WIT: Folder\033[1m $NAME \033[0malready exists ;("
 else
+
+    if [ -n "$2" ]
+    then
+    declare -A LINKS
+        for arg in "$@"
+        do
+            if [ "$arg" == "--css" ]
+            then
+                LINKS["css"]=true
+            fi
+            if [ "$arg" == "--js" ]
+            then
+                LINKS[js]=true
+            fi
+            if [ "$arg" == "--bootstrap" ]
+            then
+                LINKS[bootstrap]=true
+            fi
+            if [ "$arg" == "--jquery" ]
+            then
+                LINKS[jquery]=true
+            fi
+            if [ "$arg" == "--bulma" ]
+            then
+                LINKS[bulma]=true
+            fi
+            if [ "$arg" == "--fontawesome" ]
+            then
+                LINKS[fontawesome]=true
+            fi
+        done
+    fi
+
     mkdir $NAME
-    mkdir $NAME/styles && touch $NAME/styles/style.css
-    mkdir $NAME/scripts && touch $NAME/scripts/script.js
     echo "WIT: Initial folders to start a web development have been created" 
-    echo "<!DOCTYPE html>
-    <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <link rel='stylesheet' href='./styles/style.css'>
-        <title>My WIT Project</title>
-    </head>
-    <body>
-    
-        <script src='./scripts/script.js'></script>
-    </body>
-    </html>" > $NAME/index.html
+    echo "<!DOCTYPE html>" >> $NAME/index.html
+    echo "<html lang=\"en\">" >> $NAME/index.html
+    echo "    <head>" >> $NAME/index.html
+    echo "        <meta charset=\"UTF-8\"> " >> $NAME/index.html
+
+    if [ -v ${LINKS} ];
+    then
+        if ! [ -v ${LINKS["css"]} ];
+        then
+        echo "CSS YES"
+            echo "        <link rel=\"stylesheet\" href=\"./styles/style.css\">" >> $NAME/index.html
+            mkdir $NAME/styles && touch $NAME/styles/style.css
+        fi
+        if ! [ -v ${LINKS["bootstrap"]} ];
+        then
+        echo "BOOTSTRAP YES"
+            echo "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">" >> $NAME/index.html
+        fi
+        if ! [ -v ${LINKS["bulma"]} ];
+        then
+        echo "BULMA YES"
+            echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css\">" >> $NAME/index.html
+        fi
+        if ! [ -v ${LINKS["fontawesome"]} ];
+        then
+        echo "FONTAWESOME YES"
+            echo "        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\">" >> $NAME/index.html
+        fi
+    fi
+
+    echo "        <title>My WIT Project</title>" >> $NAME/index.html
+    echo "    </head>" >> $NAME/index.html
+    echo "    <body>" >> $NAME/index.html
+    echo "    " >> $NAME/index.html
+
+    if [ -v ${LINKS} ];
+    then
+        if ! [ -v ${LINKS["bootstrap"]} ];
+        then
+            echo "BOOTSTRAP JS YES"
+            echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
+            echo "        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\" integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
+            echo "        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\" integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
+        fi
+        if ! [ -v ${LINKS["jquery"]} ];
+        then
+            echo "JQUERY JS YES"
+            echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
+        fi
+        if ! [ -v ${LINKS["js"]} ];
+        then
+        echo "JS YES"
+            echo "        <script src=\"./scripts/script.js\"></script>" >> $NAME/index.html
+            mkdir $NAME/scripts && touch $NAME/scripts/script.js
+        fi
+    fi
+    echo "    </body>" >> $NAME/index.html
+    echo "</html>" >> $NAME/index.html
 fi
+
+
