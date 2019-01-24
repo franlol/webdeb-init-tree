@@ -26,7 +26,3 @@ wit folder-name --flags
 
 wit my-project --css --bulma --jquery
 ```
-
-#### Demo:<br>
-![alt text](https://raw.githubusercontent.com/franlol/webdeb-init-tree/master/demo.gif)
-
