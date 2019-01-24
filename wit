@@ -50,23 +50,23 @@ else
     then
         if ! [ -v ${LINKS["css"]} ];
         then
-        echo "CSS YES"
+        # echo "CSS YES"
             echo "        <link rel=\"stylesheet\" href=\"./styles/style.css\">" >> $NAME/index.html
             mkdir $NAME/styles && touch $NAME/styles/style.css
         fi
         if ! [ -v ${LINKS["bootstrap"]} ];
         then
-        echo "BOOTSTRAP YES"
+        # echo "BOOTSTRAP YES"
             echo "        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" integrity=\"sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS\" crossorigin=\"anonymous\">" >> $NAME/index.html
         fi
         if ! [ -v ${LINKS["bulma"]} ];
         then
-        echo "BULMA YES"
+        # echo "BULMA YES"
             echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css\">" >> $NAME/index.html
         fi
         if ! [ -v ${LINKS["fontawesome"]} ];
         then
-        echo "FONTAWESOME YES"
+        # echo "FONTAWESOME YES"
             echo "        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.3/css/all.css\" integrity=\"sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/\" crossorigin=\"anonymous\">" >> $NAME/index.html
         fi
     fi
@@ -80,19 +80,19 @@ else
     then
         if ! [ -v ${LINKS["bootstrap"]} ];
         then
-            echo "BOOTSTRAP JS YES"
+            # echo "BOOTSTRAP JS YES"
             echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
             echo "        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js\" integrity=\"sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
             echo "        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js\" integrity=\"sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
         fi
         if ! [ -v ${LINKS["jquery"]} ];
         then
-            echo "JQUERY JS YES"
+            # echo "JQUERY JS YES"
             echo "        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>" >> $NAME/index.html
         fi
         if ! [ -v ${LINKS["js"]} ];
         then
-        echo "JS YES"
+        # echo "JS YES"
             echo "        <script src=\"./scripts/script.js\"></script>" >> $NAME/index.html
             mkdir $NAME/scripts && touch $NAME/scripts/script.js
         fi
