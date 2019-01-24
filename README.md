@@ -1,6 +1,10 @@
 # WiT - Web-development Initial Tree
 Script to create a simple initial tree folders for the web development
 
+Get your project folder structure with a single command
+
+![alt text](https://raw.githubusercontent.com/franlol/webdeb-init-tree/master/demo.gif)
+
 ## Installation
 ```
 git clone https://github.com/franlol/webdeb-init-tree
@@ -16,9 +20,13 @@ sudo cp ./webdeb-init-tree/wit /bin/wit
 - --fontawesome: Font Awesome cdn link
 - --jquery: jQuery cdn link
 
-## Usage
-wit folder-name --flags<br>
-<br>
-Demo:<br>
+## Usage / example
+```
+wit folder-name --flags
+
+wit my-project --css --bulma --jquery
+```
+
+#### Demo:<br>
 ![alt text](https://raw.githubusercontent.com/franlol/webdeb-init-tree/master/demo.gif)
 

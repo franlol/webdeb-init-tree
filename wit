@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 NAME=$1
 
 if [ -d "./$NAME" ]
