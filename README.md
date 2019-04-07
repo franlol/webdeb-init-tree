@@ -1,5 +1,5 @@
 # WiT - Web-development Initial Tree
-Script to create a simple initial tree folders for the web development
+Script to create a boilerplate for web development
 
 Get your project folder structure with a single command
 
