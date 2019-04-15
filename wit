@@ -44,8 +44,8 @@ else
     echo "<html lang=\"en\">" >> $NAME/index.html
     echo "    <head>" >> $NAME/index.html
     echo "        <meta charset=\"UTF-8\"> " >> $NAME/index.html
-    echo "        <meta name="viewport" content="width=device-width, initial-scale=1.0">" >> $NAME/index.html
-    echo "        <meta http-equiv="X-UA-Compatible" content="ie=edge">" >> $NAME/index.html
+    echo "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> $NAME/index.html
+    echo "        <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">" >> $NAME/index.html
 
     if [ -v ${LINKS} ];
     then
