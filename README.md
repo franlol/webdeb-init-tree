@@ -1,3 +1,5 @@
+** Last update ** Adding flag --aframe (a-frame VR framework)
+
 # WiT - Web-development Initial Tree
 Script to create a boilerplate for web development
 
@@ -19,6 +21,7 @@ sudo cp ./webdeb-init-tree/wit /bin/wit
 - --bulma: Bulma cdn link
 - --fontawesome: Font Awesome cdn link
 - --jquery: jQuery cdn link
+- --aframe: A-Frame cdn link
 
 ## Usage / example
 ```
