@@ -35,6 +35,10 @@ else
             then
                 LINKS[fontawesome]=true
             fi
+            if [ "$arg" == "--aframe" ]
+            then
+                LINKS[aframe]=true
+            fi
         done
     fi
 
@@ -49,6 +53,12 @@ else
 
     if [ -v ${LINKS} ];
     then
+      
+        if ! [ -v ${LINKS["aframe"]} ];
+        then
+        # echo "A-FRAME YES"
+            echo "        <script src=\"https://aframe.io/releases/0.9.0/aframe.min.js\"></script>" >> $NAME/index.html
+        fi
         if ! [ -v ${LINKS["css"]} ];
         then
         # echo "CSS YES"
